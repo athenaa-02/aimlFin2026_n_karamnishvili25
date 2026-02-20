@@ -1,0 +1,169 @@
+<svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" font-family="'Georgia', serif">
+  <!-- Background -->
+  <rect width="800" height="520" fill="#0f1117"/>
+  
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="#e2e8f0" letter-spacing="2">SCALED DOT-PRODUCT ATTENTION</text>
+  <line x1="160" y1="48" x2="640" y2="48" stroke="#4a5568" stroke-width="1"/>
+
+  <!-- ===== INPUT TOKENS (left) ===== -->
+  <text x="72" y="90" text-anchor="middle" font-size="11" fill="#a0aec0" letter-spacing="1">INPUT</text>
+  
+  <!-- Token boxes -->
+  <rect x="20" y="100" width="104" height="32" rx="6" fill="#1a202c" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="72" y="121" text-anchor="middle" font-size="13" fill="#90cdf4">"The"</text>
+  
+  <rect x="20" y="145" width="104" height="32" rx="6" fill="#1a202c" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="72" y="166" text-anchor="middle" font-size="13" fill="#90cdf4">"cat"</text>
+  
+  <rect x="20" y="190" width="104" height="32" rx="6" fill="#1a202c" stroke="#48bb78" stroke-width="2"/>
+  <text x="72" y="211" text-anchor="middle" font-size="13" fill="#9ae6b4">"sat"</text>
+  
+  <rect x="20" y="235" width="104" height="32" rx="6" fill="#1a202c" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="72" y="256" text-anchor="middle" font-size="13" fill="#90cdf4">"on"</text>
+  
+  <rect x="20" y="280" width="104" height="32" rx="6" fill="#1a202c" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="72" y="301" text-anchor="middle" font-size="13" fill="#90cdf4">"the"</text>
+  
+  <rect x="20" y="325" width="104" height="32" rx="6" fill="#1a202c" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="72" y="346" text-anchor="middle" font-size="13" fill="#90cdf4">"mat"</text>
+
+  <!-- ===== Q K V PROJECTIONS ===== -->
+  <!-- Lines from tokens to QKV -->
+  <line x1="124" y1="116" x2="190" y2="116" stroke="#4a5568" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="124" y1="161" x2="190" y2="161" stroke="#4a5568" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="124" y1="206" x2="190" y2="206" stroke="#48bb78" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="124" y1="251" x2="190" y2="251" stroke="#4a5568" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="124" y1="296" x2="190" y2="296" stroke="#4a5568" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="124" y1="341" x2="190" y2="341" stroke="#4a5568" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Q box -->
+  <rect x="190" y="80" width="64" height="290" rx="8" fill="#2d3748" stroke="#f6ad55" stroke-width="1.5"/>
+  <text x="222" y="230" text-anchor="middle" font-size="13" fill="#f6ad55" font-weight="bold">Q</text>
+  <text x="222" y="248" text-anchor="middle" font-size="10" fill="#a0aec0">Query</text>
+
+  <!-- K box -->
+  <rect x="268" y="80" width="64" height="290" rx="8" fill="#2d3748" stroke="#fc8181" stroke-width="1.5"/>
+  <text x="300" y="230" text-anchor="middle" font-size="13" fill="#fc8181" font-weight="bold">K</text>
+  <text x="300" y="248" text-anchor="middle" font-size="10" fill="#a0aec0">Key</text>
+
+  <!-- V box -->
+  <rect x="346" y="80" width="64" height="290" rx="8" fill="#2d3748" stroke="#76e4f7" stroke-width="1.5"/>
+  <text x="378" y="230" text-anchor="middle" font-size="13" fill="#76e4f7" font-weight="bold">V</text>
+  <text x="378" y="248" text-anchor="middle" font-size="10" fill="#a0aec0">Value</text>
+
+  <!-- WQ WK WV labels -->
+  <text x="222" y="74" text-anchor="middle" font-size="10" fill="#f6ad55">W^Q</text>
+  <text x="300" y="74" text-anchor="middle" font-size="10" fill="#fc8181">W^K</text>
+  <text x="378" y="74" text-anchor="middle" font-size="10" fill="#76e4f7">W^V</text>
+
+  <!-- ===== ATTENTION SCORE COMPUTATION ===== -->
+  <!-- Arrow from Q,K to score -->
+  <line x1="254" y1="225" x2="470" y2="225" stroke="#f6ad55" stroke-width="1.5" marker-end="url(#arrowGold)"/>
+  <line x1="332" y1="225" x2="470" y2="225" stroke="#fc8181" stroke-width="1.5"/>
+
+  <!-- Score box -->
+  <rect x="470" y="120" width="130" height="210" rx="8" fill="#1a202c" stroke="#9f7aea" stroke-width="1.5"/>
+  <text x="535" y="148" text-anchor="middle" font-size="11" fill="#9f7aea" letter-spacing="1">QK^T / √dk</text>
+  
+  <!-- Attention score heatmap (6x6 simplified as colored rects) -->
+  <!-- Row for "sat" (query) showing attention to each key -->
+  <text x="480" y="172" font-size="9" fill="#a0aec0">scores:</text>
+  
+  <!-- Mini heatmap 5 cols x 6 rows -->
+  <rect x="480" y="178" width="18" height="18" rx="2" fill="#2d6a8a" opacity="0.7"/>
+  <rect x="500" y="178" width="18" height="18" rx="2" fill="#2980b9" opacity="0.9"/>
+  <rect x="520" y="178" width="18" height="18" rx="2" fill="#1a5276" opacity="0.5"/>
+  <rect x="540" y="178" width="18" height="18" rx="2" fill="#154360" opacity="0.4"/>
+  <rect x="560" y="178" width="18" height="18" rx="2" fill="#1a5276" opacity="0.5"/>
+  <rect x="580" y="178" width="18" height="18" rx="2" fill="#1a5276" opacity="0.5"/>
+
+  <rect x="480" y="198" width="18" height="18" rx="2" fill="#1a5276" opacity="0.4"/>
+  <rect x="500" y="198" width="18" height="18" rx="2" fill="#2980b9" opacity="0.8"/>
+  <rect x="520" y="198" width="18" height="18" rx="2" fill="#2471a3" opacity="0.7"/>
+  <rect x="540" y="198" width="18" height="18" rx="2" fill="#1a5276" opacity="0.4"/>
+  <rect x="560" y="198" width="18" height="18" rx="2" fill="#154360" opacity="0.3"/>
+  <rect x="580" y="198" width="18" height="18" rx="2" fill="#1a5276" opacity="0.4"/>
+
+  <!-- "sat" row — highlighted -->
+  <rect x="478" y="216" width="122" height="20" rx="3" fill="none" stroke="#48bb78" stroke-width="1.5"/>
+  <rect x="480" y="218" width="18" height="16" rx="2" fill="#1a5276" opacity="0.4"/>
+  <rect x="500" y="218" width="18" height="16" rx="2" fill="#e74c3c" opacity="0.9"/>
+  <rect x="520" y="218" width="18" height="16" rx="2" fill="#2980b9" opacity="0.7"/>
+  <rect x="540" y="218" width="18" height="16" rx="2" fill="#1a5276" opacity="0.35"/>
+  <rect x="560" y="218" width="18" height="16" rx="2" fill="#154360" opacity="0.3"/>
+  <rect x="580" y="218" width="18" height="16" rx="2" fill="#e74c3c" opacity="0.8"/>
+  <text x="607" y="229" font-size="9" fill="#48bb78">← "sat"</text>
+
+  <rect x="480" y="236" width="18" height="18" rx="2" fill="#1a5276" opacity="0.5"/>
+  <rect x="500" y="236" width="18" height="18" rx="2" fill="#154360" opacity="0.3"/>
+  <rect x="520" y="236" width="18" height="18" rx="2" fill="#2471a3" opacity="0.6"/>
+  <rect x="540" y="236" width="18" height="18" rx="2" fill="#2980b9" opacity="0.8"/>
+  <rect x="560" y="236" width="18" height="18" rx="2" fill="#1a5276" opacity="0.4"/>
+  <rect x="580" y="236" width="18" height="18" rx="2" fill="#154360" opacity="0.3"/>
+
+  <rect x="480" y="256" width="18" height="18" rx="2" fill="#154360" opacity="0.3"/>
+  <rect x="500" y="256" width="18" height="18" rx="2" fill="#1a5276" opacity="0.4"/>
+  <rect x="520" y="256" width="18" height="18" rx="2" fill="#154360" opacity="0.3"/>
+  <rect x="540" y="256" width="18" height="18" rx="2" fill="#2980b9" opacity="0.7"/>
+  <rect x="560" y="256" width="18" height="18" rx="2" fill="#2471a3" opacity="0.6"/>
+  <rect x="580" y="256" width="18" height="18" rx="2" fill="#e74c3c" opacity="0.85"/>
+
+  <rect x="480" y="276" width="18" height="18" rx="2" fill="#1a5276" opacity="0.4"/>
+  <rect x="500" y="276" width="18" height="18" rx="2" fill="#154360" opacity="0.3"/>
+  <rect x="520" y="276" width="18" height="18" rx="2" fill="#e74c3c" opacity="0.9"/>
+  <rect x="540" y="276" width="18" height="18" rx="2" fill="#1a5276" opacity="0.45"/>
+  <rect x="560" y="276" width="18" height="18" rx="2" fill="#2471a3" opacity="0.6"/>
+  <rect x="580" y="276" width="18" height="18" rx="2" fill="#1a5276" opacity="0.4"/>
+
+  <!-- Softmax label -->
+  <text x="535" y="310" text-anchor="middle" font-size="11" fill="#9f7aea">softmax →</text>
+  <text x="535" y="324" text-anchor="middle" font-size="10" fill="#718096">attention weights</text>
+
+  <!-- ===== OUTPUT ===== -->
+  <!-- Arrow from V and scores to output -->
+  <line x1="600" y1="225" x2="660" y2="225" stroke="#9f7aea" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+  <line x1="410" y1="225" x2="470" y2="225" stroke="#76e4f7" stroke-width="1.5"/>
+
+  <!-- Output box -->
+  <rect x="660" y="160" width="110" height="130" rx="8" fill="#1a202c" stroke="#48bb78" stroke-width="2"/>
+  <text x="715" y="218" text-anchor="middle" font-size="13" fill="#48bb78" font-weight="bold">Output</text>
+  <text x="715" y="236" text-anchor="middle" font-size="10" fill="#a0aec0">Weighted sum</text>
+  <text x="715" y="252" text-anchor="middle" font-size="10" fill="#a0aec0">of Values</text>
+  <text x="715" y="272" text-anchor="middle" font-size="11" fill="#68d391">Z = softmax</text>
+  <text x="715" y="285" text-anchor="middle" font-size="11" fill="#68d391">(QKᵀ/√dk)V</text>
+
+  <!-- ===== LEGEND ===== -->
+  <rect x="20" y="400" width="760" height="100" rx="8" fill="#1a202c" stroke="#2d3748" stroke-width="1"/>
+  <text x="400" y="420" text-anchor="middle" font-size="11" fill="#a0aec0" letter-spacing="1">HOW ATTENTION WORKS</text>
+  
+  <rect x="36" y="432" width="10" height="10" rx="2" fill="#f6ad55"/>
+  <text x="52" y="442" font-size="10" fill="#e2e8f0">Query (Q): "What am I looking for?"</text>
+  
+  <rect x="36" y="452" width="10" height="10" rx="2" fill="#fc8181"/>
+  <text x="52" y="462" font-size="10" fill="#e2e8f0">Key (K): "What do I contain?"</text>
+  
+  <rect x="36" y="472" width="10" height="10" rx="2" fill="#76e4f7"/>
+  <text x="52" y="482" font-size="10" fill="#e2e8f0">Value (V): "What do I actually pass forward?"</text>
+
+  <rect x="260" y="432" width="10" height="10" rx="2" fill="#e74c3c"/>
+  <text x="276" y="442" font-size="10" fill="#e2e8f0">High attention score</text>
+  
+  <rect x="260" y="452" width="10" height="10" rx="2" fill="#154360"/>
+  <text x="276" y="462" font-size="10" fill="#e2e8f0">Low attention score</text>
+
+  <text x="430" y="442" font-size="10" fill="#e2e8f0">√dk = scaling factor (prevents</text>
+  <text x="430" y="457" font-size="10" fill="#e2e8f0">vanishing gradients in large dims)</text>
+  <text x="430" y="472" font-size="10" fill="#e2e8f0">Green border = current query token</text>
+  <text x="430" y="487" font-size="10" fill="#e2e8f0">("sat" attending to all other tokens)</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowGold" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#f6ad55"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#9f7aea"/>
+    </marker>
+  </defs>
+</svg>
